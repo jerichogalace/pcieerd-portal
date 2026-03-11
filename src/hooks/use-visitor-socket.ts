@@ -28,7 +28,7 @@ export function useVisitorSocket() {
       const isDev = process.env.NODE_ENV === 'development'
       
       const socketOptions: Record<string, unknown> = {
-        path: '/',
+        path: '/socket.io',
         transports: ['websocket', 'polling'],
       }
       
@@ -51,7 +51,7 @@ export function useVisitorSocket() {
         const isDev = process.env.NODE_ENV === 'development'
         
         const socketOptions: Record<string, unknown> = {
-          path: '/',
+          path: '/socket.io',
           transports: ['websocket', 'polling'],
         }
         

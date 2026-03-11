@@ -4,8 +4,9 @@ const { Server } = require('socket.io');
 const next = require('next');
 
 const dev = process.env.NODE_ENV !== 'production';
-const hostname = process.env.HOSTNAME || 'localhost';
-const port = process.env.PORT || 3000;
+const hostname = process.env.HOSTNAME || '0.0.0.0';
+// Render provides PORT environment variable
+const port = parseInt(process.env.PORT || '3000', 10);
 
 const app = next({ dev, hostname, port });
 const handler = app.getRequestHandler();
@@ -48,14 +49,16 @@ app.prepare().then(() => {
   const httpServer = createServer(handler);
   
   const io = new Server(httpServer, {
-    path: '/',
+    path: '/socket.io',
     cors: {
       origin: "*",
       methods: ["GET", "POST"]
     },
     pingTimeout: 60000,
     pingInterval: 25000,
-    maxHttpBufferSize: 50e6
+    maxHttpBufferSize: 50e6,
+    transports: ['websocket', 'polling'],
+    allowEIO3: true
   });
 
   io.on('connection', (socket) => {
@@ -190,7 +193,7 @@ app.prepare().then(() => {
     });
   });
 
-  httpServer.listen(port, () => {
-    console.log(`> Ready on http://${hostname}:${port}`);
+  httpServer.listen(port, '0.0.0.0', () => {
+    console.log(`> Ready on http://0.0.0.0:${port}`);
   });
 });
