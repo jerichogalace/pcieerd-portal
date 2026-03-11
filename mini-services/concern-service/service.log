@@ -1,0 +1,9 @@
+46 |     }
+47 |   }
+48 |   let er;
+49 |   if (aReceived SIGTERM signal, shutting down server...
+Concern WebSocket server closed
+r: Failed to start server. Is port 3003 in use?
+      at emitError (node:events:51:13)
+Received SIGTERM signal, shutting down server...
+Concern WebSocket server closed
