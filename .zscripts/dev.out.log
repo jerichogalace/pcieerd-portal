@@ -1,8 +1,8 @@
 ==========================================
-[2026-03-25 03:44:26] Starting: bun install
+[2026-03-25 05:43:39] Starting: bun install
 ==========================================
 [BUN] Installing dependencies...
-[0.26ms] ".env"
+[0.95ms] ".env"
 bun install v1.3.10 (30e609e0)
 
 + @tailwindcss/postcss@4.1.18
@@ -81,14 +81,14 @@ bun install v1.3.10 (30e609e0)
 + zod@4.3.5
 + zustand@5.0.10
 
-827 packages installed [8.62s]
+827 packages installed [9.86s]
 ==========================================
-[2026-03-25 03:44:35] Completed: bun install
-[LOG] Step: bun install | Duration: 9s
+[2026-03-25 05:43:49] Completed: bun install
+[LOG] Step: bun install | Duration: 10s
 ==========================================
 
 ==========================================
-[2026-03-25 03:44:35] Starting: bun run db:push
+[2026-03-25 05:43:49] Starting: bun run db:push
 ==========================================
 [BUN] Setting up database...
 $ prisma db push
@@ -102,7 +102,7 @@ SQLite database custom.db created at file:/home/z/my-project/db/custom.db
 
 Running generate... (Use --skip-generate to skip the generators)
 [2K[1A[2K[GRunning generate... - Prisma Client
-[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 68ms
+[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 70ms
 ┌─────────────────────────────────────────────────────────┐
 │  Update available 6.19.2 -> 7.5.0                       │
 │                                                         │
@@ -115,28 +115,28 @@ Running generate... (Use --skip-generate to skip the generators)
 └─────────────────────────────────────────────────────────┘
 
 ==========================================
-[2026-03-25 03:44:36] Completed: bun run db:push
-[LOG] Step: bun run db:push | Duration: 1s
+[2026-03-25 05:43:51] Completed: bun run db:push
+[LOG] Step: bun run db:push | Duration: 2s
 ==========================================
 
 ==========================================
-[2026-03-25 03:44:36] Starting: Starting Next.js dev server
+[2026-03-25 05:43:51] Starting: Starting Next.js dev server
 ==========================================
 [BUN] Starting development server...
 ==========================================
 $ next dev -p 3000 2>&1 | tee dev.log
-[2026-03-25 03:44:36] Completed: Starting Next.js dev server
+[2026-03-25 05:43:51] Completed: Starting Next.js dev server
 [LOG] Step: Starting Next.js dev server | Duration: 0s
 ==========================================
 
 ==========================================
-[2026-03-25 03:44:36] Starting: Waiting for Next.js dev server
+[2026-03-25 05:43:51] Starting: Waiting for Next.js dev server
 ==========================================
 Waiting for Next.js dev server to be ready on localhost:3000...
 Attempt 1/60: Next.js dev server not ready yet, waiting...
 ▲ Next.js 16.1.3 (Turbopack)
 - Local:         http://localhost:3000
-- Network:       http://21.0.9.5:3000
+- Network:       http://21.0.6.130:3000
 - Environments: .env
 
 ✓ Starting...
@@ -155,56 +155,69 @@ https://nextjs.org/telemetry
 
   	- jsx was set to react-jsx (next.js uses the React automatic runtime)
 
-✓ Ready in 908ms
- GET / 200 in 2.7s (compile: 2.6s, render: 135ms)
+✓ Ready in 907ms
+ GET / 200 in 2.7s (compile: 2.5s, render: 148ms)
 Next.js dev server is ready!
- GET / 200 in 2.6s (compile: 2.4s, render: 205ms)
+ GET / 200 in 2.7s (compile: 2.5s, render: 210ms)
 ==========================================
-[2026-03-25 03:44:40] Completed: Waiting for Next.js dev server
+[2026-03-25 05:43:55] Completed: Waiting for Next.js dev server
 [LOG] Step: Waiting for Next.js dev server | Duration: 4s
 ==========================================
 
 ==========================================
-[2026-03-25 03:44:40] Starting: Health check
+[2026-03-25 05:43:55] Starting: Health check
 ==========================================
 [BUN] Performing health check...
- GET / 200 in 25ms (compile: 1592µs, render: 23ms)
+ GET / 200 in 21ms (compile: 1732µs, render: 20ms)
 [BUN] Health check passed
 ==========================================
-[2026-03-25 03:44:40] Completed: Health check
+[2026-03-25 05:43:55] Completed: Health check
 [LOG] Step: Health check | Duration: 0s
 ==========================================
 
 ==========================================
-[2026-03-25 03:44:40] Starting: Starting mini-services
+[2026-03-25 05:43:55] Starting: Starting mini-services
 ==========================================
 Found mini-services directory, scanning for sub-services...
 Mini-services startup completed. Started 0 service(s).
 ==========================================
-[2026-03-25 03:44:40] Completed: Starting mini-services
+[2026-03-25 05:43:55] Completed: Starting mini-services
 [LOG] Step: Starting mini-services | Duration: 0s
 ==========================================
 
 Next.js dev server is running in background (PID: 658).
 Use 'kill 658' to stop it.
+ GET / 200 in 44ms (compile: 5ms, render: 39ms)
 ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-✓ Compiled in 806ms
- GET / 200 in 724ms (compile: 614ms, render: 109ms)
- GET / 200 in 14ms (compile: 3ms, render: 11ms)
- GET / 200 in 13ms (compile: 1575µs, render: 12ms)
+✓ Compiled in 917ms
+ GET / 200 in 809ms (compile: 708ms, render: 101ms)
+ GET / 200 in 15ms (compile: 2ms, render: 13ms)
  GET / 200 in 17ms (compile: 2ms, render: 15ms)
- GET / 200 in 20ms (compile: 4ms, render: 16ms)
- GET / 200 in 19ms (compile: 3ms, render: 17ms)
- GET / 200 in 22ms (compile: 3ms, render: 20ms)
- GET / 200 in 15ms (compile: 3ms, render: 12ms)
- GET / 200 in 14ms (compile: 1773µs, render: 12ms)
- GET / 200 in 18ms (compile: 1733µs, render: 16ms)
- GET / 200 in 13ms (compile: 1552µs, render: 11ms)
- GET / 200 in 12ms (compile: 1507µs, render: 11ms)
- GET / 200 in 22ms (compile: 1680µs, render: 21ms)
- GET / 200 in 21ms (compile: 1322µs, render: 19ms)
+ GET / 200 in 18ms (compile: 2ms, render: 16ms)
+ GET / 200 in 18ms (compile: 2ms, render: 16ms)
+ GET / 200 in 16ms (compile: 1724µs, render: 15ms)
+ GET / 200 in 19ms (compile: 2ms, render: 17ms)
+ GET / 200 in 22ms (compile: 3ms, render: 19ms)
+ GET / 200 in 14ms (compile: 1574µs, render: 12ms)
+ GET / 200 in 13ms (compile: 1590µs, render: 12ms)
+ GET / 200 in 27ms (compile: 1894µs, render: 25ms)
+ GET / 200 in 18ms (compile: 1912µs, render: 16ms)
+ GET / 200 in 12ms (compile: 1477µs, render: 11ms)
+ GET / 200 in 12ms (compile: 1801µs, render: 11ms)
 ⚠ Fast Refresh had to perform a full reload when ./src/app/page.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET / 200 in 146ms (compile: 1962µs, render: 144ms)
-✓ Compiled in 623ms
- GET / 200 in 69ms (compile: 6ms, render: 64ms)
- GET / 200 in 59ms (compile: 4ms, render: 56ms)
+ GET / 200 in 146ms (compile: 2ms, render: 144ms)
+ GET / 200 in 55ms (compile: 3ms, render: 51ms)
+⚠ Cross origin request detected from preview-chat-7dee2fa4-99b7-4067-a38f-a3af703e996c.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+✓ Compiled in 735ms
+ GET / 200 in 56ms (compile: 4ms, render: 53ms)
+ GET / 200 in 47ms (compile: 2ms, render: 45ms)
+ GET / 200 in 42ms (compile: 2ms, render: 40ms)
+ GET / 200 in 50ms (compile: 5ms, render: 45ms)
+ GET / 200 in 34ms (compile: 2ms, render: 32ms)
+  Reload env: .env
+✓ Compiled in 33ms
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ GET / 200 in 105ms (compile: 52ms, render: 53ms)
+ GET / 200 in 186ms (compile: 1893µs, render: 184ms)
+ GET / 200 in 56ms (compile: 3ms, render: 52ms)

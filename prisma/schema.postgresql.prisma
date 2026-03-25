@@ -1,11 +1,5 @@
-// Prisma schema for PRODUCTION - Neon PostgreSQL
-// 
-// INSTRUCTIONS FOR RENDER DEPLOYMENT:
-// 1. Copy this file content to prisma/schema.prisma before deploying
-// 2. Or set the following environment variables in Render:
-//    - DATABASE_URL: Your Neon pooled connection string
-//    - DIRECT_DATABASE_URL: Your Neon direct connection string
-// 3. The build command will automatically generate the Prisma client
+// Prisma schema for DOST-PCIEERD Concern Management System
+// PostgreSQL version for production deployment on Render
 
 generator client {
   provider = "prisma-client-js"
@@ -26,9 +20,9 @@ model Concern {
   contactNumber   String?  @default("")
   email           String?  @default("")
   concernType     String   // Inquiry, Complaint, Request, Follow-up, Other
-  concernDetails  String   @db.Text
-  additionalNotes String?  @default("") @db.Text
-  attachments     Json?    @default("[]") // Array of attachments as JSON
+  concernDetails  String
+  additionalNotes String?  @default("")
+  attachments     String?  @default("[]") // JSON string of attachments array
   dateSubmitted   String   // MM/DD/YYYY format
   timeSubmitted   String   // HH:MM:SS AM/PM format
   status          String   @default("Unread") // Unread, Pending, Completed
@@ -37,7 +31,6 @@ model Concern {
 
   @@index([status])
   @@index([dateSubmitted])
-  @@index([createdAt])
   @@map("concerns")
 }
 

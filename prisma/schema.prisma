@@ -1,21 +1,14 @@
 // Prisma schema for DOST-PCIEERD Concern Management System
-// 
-// FOR LOCAL DEVELOPMENT (SQLite):
-// - Uses SQLite by default for easier local development
-// - Database file: ./db/custom.db
-//
-// FOR PRODUCTION DEPLOYMENT (Neon PostgreSQL):
-// - Change provider to "postgresql"
-// - Set DATABASE_URL and DIRECT_DATABASE_URL environment variables
-// - Run: prisma migrate deploy
+// PostgreSQL version for production deployment on Render
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
 }
 
 // Concern model - stores visitor concerns/submissions

@@ -1,39 +1,20 @@
-# Render Blueprint Configuration for DOST-PCIEERD Concern System
-# This file defines the deployment configuration for Render
-# Learn more: https://render.com/docs/blueprint-spec
-
 services:
   - type: web
-    name: dost-pcieerd-concern-system
+    name: pcieerd-portal
     runtime: node
-    plan: free # Can be upgraded to starter, standard, or pro
-    
-    # Build configuration
-    # 1. Copy PostgreSQL schema (replaces SQLite schema)
-    # 2. Generate Prisma client
-    # 3. Build Next.js application
-    buildCommand: cp prisma/schema.postgresql.prisma prisma/schema.prisma && ./node_modules/.bin/prisma generate && next build
-    
+    plan: free
+    region: singapore
+    buildCommand: cp prisma/schema.postgresql.prisma prisma/schema.prisma && bun install && prisma generate && prisma db push --accept-data-loss && next build
     startCommand: next start -p 3000
-    
-    # Health check
-    healthCheckPath: /api/health
-    
-    # Auto-deploy on push to main branch
-    autoDeploy: true
-    branch: main
-    
-    # Environment variables - YOU MUST SET THESE IN RENDER DASHBOARD
     envVars:
-      - key: NODE_ENV
-        value: production
-      
-      # Neon PostgreSQL - Pooled connection (for serverless/queries)
-      # Set this in Render Dashboard: DATABASE_URL
+      - key: NODE_VERSION
+        value: "20"
+      - key: BUN_VERSION
+        value: "latest"
       - key: DATABASE_URL
         sync: false
-      
-      # Neon PostgreSQL - Direct connection (for migrations)
-      # Set this in Render Dashboard: DIRECT_DATABASE_URL
       - key: DIRECT_DATABASE_URL
         sync: false
+      - key: NEXT_PUBLIC_APP_URL
+        value: "https://pcieerd-portal.onrender.com"
+    healthCheckPath: /api/health
