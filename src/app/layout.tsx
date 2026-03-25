@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "DOST - PCIEERD Concern System",
-  description: "Submit your concerns and inquiries to DOST - PCIEERD. A convenient way for visitors to communicate with our office.",
+  title: "DOST-PCIEERD Portal",
+  description: "Submit your concerns and inquiries to DOST-PCIEERD Portal. A convenient way for visitors to communicate with our office.",
   keywords: ["DOST", "PCIEERD", "Concern", "Government", "Philippines"],
-  authors: [{ name: "DOST - PCIEERD" }],
+  authors: [{ name: "EUSTDD INTERNS 2026" }],
   icons: {
     icon: [
       { url: "/icon.png", sizes: "32x32", type: "image/png" },
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "DOST - PCIEERD Concern System",
-    description: "Submit your concerns and inquiries to DOST - PCIEERD",
+    title: "DOST-PCIEERD Portal",
+    description: "Submit your concerns and inquiries to DOST-PCIEERD Portal",
     type: "website",
     images: [
       { url: "/logo.png", width: 1200, height: 400, alt: "DOST-PCIEERD Logo" },
